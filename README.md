@@ -3,6 +3,25 @@
 
 Random Access Machine written in Haskell
 
+## Instructions
+This Random Access Machine has 5 instructions.
+
+### `Z(i)`
+Set `0` to register `R(i)`
+
+### `S(i)`
+Increment register `R(i)` by `1`
+
+### `M(i,j)`
+Assign value of `R(j)` to `R(i)`
+
+### `J(i,j,k)`
+Jump to `k`th instruction if value of `R(i)` and `R(j)` are equal
+(NOTE: instruction is one origin)
+
+### `E`
+Halt program
+
 ## Example
 
 ```hs
