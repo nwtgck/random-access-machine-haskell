@@ -19,8 +19,8 @@ newtype InstrNum = InstrNum Natural
 data Instr = 
     Z RegNum
   | S RegNum
-  | M RegNum RegNum
-  | J RegNum RegNum InstrNum
+  | M (RegNum, RegNum)
+  | J (RegNum, RegNum, InstrNum)
   | E
   deriving (Show, Eq)
 
@@ -92,11 +92,11 @@ runInstr (S regNum) = do
   nat <- getNatFromRegister regNum
   setRegister regNum (nat + 1)
   incPc
-runInstr (M regNum1 regNum2) = do
+runInstr (M (regNum1, regNum2)) = do
   nat <- getNatFromRegister regNum2
   setRegister regNum1 nat
   incPc
-runInstr (J regNum1 regNum2 instrNum) = do
+runInstr (J (regNum1, regNum2, instrNum)) = do
   n1 <- getNatFromRegister regNum1
   n2 <- getNatFromRegister regNum2
   if n1 == n2

@@ -8,13 +8,12 @@ program1 = Program
   ]
 
 sub1Prog = Program
-  [ J 1 2 5
-  , S 2
-  , S 0
-  , J 0 0 1
+  [ J(1, 2, 5)
+  , S(2)
+  , S(0)
+  , J(0, 0, 1)
   , E
   ]
-
 
 main :: IO ()
 main = do
