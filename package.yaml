@@ -24,17 +24,20 @@ dependencies:
 
 library:
  source-dirs: src
+ dependencies:
+ - mtl
 
 executables:
-  random-access-machine-exe:
+  random-access-machine-examples:
     main:                Main.hs
-    source-dirs:         app
+    source-dirs:         examples
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    dependencies: []
-#    - random-access-machine
+    dependencies:
+    - random-access-machine
+    - mtl
 
 tests:
   random-access-machine-test:
