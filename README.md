@@ -1,4 +1,5 @@
 # random-access-machine
+[![Build Status](https://travis-ci.com/nwtgck/random-access-machine-haskell.svg?token=TuxNpqznwwyy7hyJwBVm&branch=develop)](https://travis-ci.com/nwtgck/random-access-machine-haskell)
 
 Random Access Machine written in Haskell
 
