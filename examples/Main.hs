@@ -15,9 +15,26 @@ sub1Prog = Program
   , E
   ]
 
+mulProg = Program
+  [ J (2, 3, 9)
+  , Z (4)
+  , J(1, 4, 7)
+  , S (0)
+  , S (4)
+  , J (0, 0, 3)
+  , S (3)
+  , J (0, 0, 1)
+  , E
+  ]
+
 main :: IO ()
 main = do
-  let (res, env) = execProgram sub1Prog [7, 4] -- 7 - 4
+  putStr "7 - 4 = "
+  let (res, env) = execProgram sub1Prog [7, 4]
   print res
-  let (res, env) = execProgram sub1Prog [87, 23] -- 87 - 23
+  putStr "87 - 23 = "  
+  let (res, env) = execProgram sub1Prog [87, 23]
+  print res
+  putStr "2 * 3 = "  
+  let (res, env) = execProgram mulProg [2, 3]
   print res
